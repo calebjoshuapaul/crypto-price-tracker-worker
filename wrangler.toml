@@ -1,0 +1,13 @@
+name = "crypto-price-tracker-worker"
+type = "javascript"
+account_id = 'ebf1ae44399e99454f38475e6dc95c77'
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+compatibility_date = "2021-12-10"
+
+[build]
+command = "npm install && npm run build"
+
+[build.upload]
+format = "service-worker"
