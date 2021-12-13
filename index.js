@@ -6,7 +6,7 @@ const API_ENDPOINT =
   "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
 
 async function handleRequest(request) {
-  const data = await fetch(`${API_ENDPOINT}?limit=15`, {
+  const fetchedData = await fetch(`${API_ENDPOINT}?limit=15`, {
     headers: {
       "X-CMC_PRO_API_KEY": `${API_KEY}`,
     },
@@ -14,7 +14,16 @@ async function handleRequest(request) {
     .then((response) => response.json())
     .then((data) => data);
 
-  return new Response(JSON.stringify(data), {
+  const cryptoList = fetchedData.data;
+  const result = cryptoList.map(function (crypto) {
+    return {
+      name: crypto.name,
+      symbol: crypto.symbol,
+      price: crypto.quote.USD.price,
+    };
+  });
+
+  return new Response(JSON.stringify(result), {
     headers: {
       "content-type": "application/json",
     },
