@@ -3,11 +3,11 @@ addEventListener("fetch", (event) => {
 });
 
 const API_ENDPOINT =
-  "https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest ";
+  "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
 
 async function handleRequest(request) {
   const data = await fetch(API_ENDPOINT, {
-    "X-CMC_PRO_API_KEY": `${API_KEY}`,
+    "X-CMC_PRO_API_KEY": `${API_KEY}?limit=15`,
   })
     .then((response) => response.json())
     .then((data) => data);
