@@ -7,7 +7,9 @@ const API_ENDPOINT =
 
 async function handleRequest(request) {
   const data = await fetch(`${API_ENDPOINT}?limit=15`, {
-    "X-CMC_PRO_API_KEY": `${API_KEY}`,
+    headers: {
+      "X-CMC_PRO_API_KEY": `${API_KEY}`,
+    },
   })
     .then((response) => response.json())
     .then((data) => data);
