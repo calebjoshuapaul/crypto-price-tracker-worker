@@ -12,7 +12,7 @@ async function handleRequest(request) {
     .then((response) => response.json())
     .then((data) => data);
 
-  return new Response(data, {
+  return new Response("[" + data + "]", {
     headers: {
       "content-type": "application/json",
     },
