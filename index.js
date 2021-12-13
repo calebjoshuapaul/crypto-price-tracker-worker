@@ -13,4 +13,12 @@ async function handleRequest(request) {
     .then((data) => data);
 
   console.log(JSON.stringify(data));
+
+  return new Response(JSON.stringify(data), {
+    headers: {
+      "content-type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      Vary: "Origin",
+    },
+  });
 }
