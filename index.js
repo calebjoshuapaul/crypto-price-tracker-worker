@@ -29,6 +29,8 @@ async function handleRequest(request) {
   return new Response(JSON.stringify(result), {
     headers: {
       "content-type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      Vary: "Origin",
     },
   });
 }
