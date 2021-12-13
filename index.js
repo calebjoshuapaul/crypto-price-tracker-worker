@@ -7,16 +7,14 @@ const API_ENDPOINT =
 
 async function handleRequest(request) {
   const data = await fetch(API_ENDPOINT, {
-    "X-CMC_PRO_API_KEY": `2243abfd-1d98-4e16-adb2-1e32fa1dab1d`,
+    "X-CMC_PRO_API_KEY": `${API_KEY}`,
   })
     .then((response) => response.json())
     .then((data) => data);
 
-  return new Response(JSON.stringify(data), {
+  return new Response(data, {
     headers: {
       "content-type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-      Vary: "Origin",
     },
   });
 }
