@@ -1,4 +1,9 @@
 # crypto-price-tracker-worker
 
-This worker is built using cloudflare, here we make an api call to pro-api.coinmarketcap.com which gives back a json response, which is then filtered and reproduced.
-This worker is used to keep track of current crypto price.
+This worker is built using cloudflare
+- The code is a function that handles requests for cryptocurrency listings.
+- It uses the fetch API to get data from coinmarketcap.com and then returns it as JSON.
+–
+- The code is an example of how to use the fetch API.
+
+- The code fetches data from CoinMarketCap and returns it in JSON format.
